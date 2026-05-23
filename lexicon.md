@@ -21,6 +21,8 @@ For the single-iconeme dictionary, see [iconemes.md](iconemes.md).
 |---|---|---|
 | *kaecur* | BRIGHT + TIME | day |
 | *miulcur* | DARK + TIME | night |
+| *kaecurpe* | BRIGHT + TIME + BEGIN | morning |
+| *miulpe* | DARK + BEGIN | evening |
 | *kaecurcu* | BRIGHT + TIME + AFTER | tomorrow |
 | *kaecurpu* | BRIGHT + TIME + BEFORE | yesterday |
 | *kaetaor* | BRIGHT + EYE | sun |
@@ -108,6 +110,7 @@ animal" — but those needn't be lexicalized.
 | *foetaul* | HAND + LONG | arm |
 | *xiltaul* | FOOT + LONG | leg |
 | *xamfim* | OUTSIDE + PART | skin |
+| *ceimfim* | HIGH + PART | face, surface |
 | *peimyar* | HARD + INSIDE | bone |
 | *simfon* | LIVE + WATER | blood |
 | *simxim* | LIVE + AIR | breath |
@@ -126,6 +129,7 @@ animal" — but those needn't be lexicalized.
 |---|---|---|
 | *rehil* | DO + TOWARD | go, walk |
 | *gaimhil* | STRONG + TOWARD | run |
+| *yalxim* | STILL + AIR | hover, float |
 | *yimyal* | DOWN + STILL | sit |
 | *yalrar* | STILL + UP | stand |
 | *yalman* | STILL + CONTINUE | sleep |
@@ -173,6 +177,14 @@ direction-first ordering is the one that survives the tokenizer.
 | *delul* | FEEL + JOIN | love |
 | *yalli* | STILL + GOOD | peace |
 | *tiaryo* | HARM + POSSIBLE | dangerous |
+
+## Religion and cosmology
+
+| Word | Composition | Meaning |
+|---|---|---|
+| *kamna* | MAKE + ALL | God, creator-of-all |
+| *pecur* | BEGIN + TIME | the beginning |
+
 
 ## Quantity, time, and place expressions
 
