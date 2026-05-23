@@ -231,10 +231,35 @@ context. Default is unmarked. ONE before a noun marks explicit singular.
 Used between the things they connect.
 
 ### Subordination
-Clause-initial particles introduce subordinate clauses:
+Clause-initial particles introduce subordinate clauses. Subordinators
+sit *before* the subject of their clause; this is what distinguishes
+them from the preverbal TAM particles that share a form, which sit
+*after* the subject and *before* the verb.
+
+**Conditional and causal**
 - *im* (IF) for conditionals
+- *baim* (FALSE + IF) for negative conditionals — "unless"
 - *fe* (BECAUSE) for causal clauses
+
+**Temporal** — the four TAM particles double as clause-initial
+subordinators when fronted before a subordinate subject:
+- *cur* (TIME) — "when"
+- *man* (CONTINUE) — "while"
+- *pu* (BEFORE) — "before"
+- *cu* (AFTER) — "after"
+
+**Concessive**
+- *naim* (ALL + IF, "in every case, if") — "even if, although"
+
+**Purpose**
+- *hil* (TOWARD) — "so that, in order to"
+
+**Complement and relative**
 - *il* (BELONG) for relative clauses and complement clauses
+
+Subordinate clauses are separated from the main clause by a comma when
+they precede it; the comma is optional when they follow. Examples in
+[examples.md](examples.md) sections 4–8 cover each form.
 
 ### Imperatives
 Bare verb (no subject) = imperative: *gar!* "Look!"

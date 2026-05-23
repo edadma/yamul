@@ -5,14 +5,6 @@ device they showcase. Words used here are drawn from
 [iconemes.md](iconemes.md) (single iconemes) and
 [lexicon.md](lexicon.md) (compounds).
 
-> **Note on proposed subordinators.** The temporal, concessive, and
-> purpose subordinators used below (*pu* / *cu* / *man* / *cur* as
-> clause-initial words, *naim*, *baim*, and *hil* as a subordinator)
-> are proposals — they aren't yet documented in
-> [grammar.md](grammar.md). The conditional (*im*), causal (*fe*),
-> relative-clause and complement (*il*) constructions are committed.
-
-
 ---
 
 ## 1. Simple clauses
@@ -87,7 +79,7 @@ device they showcase. Words used here are drawn from
 
 ---
 
-## 6. Concessive (proposed *naim*)
+## 6. Concessive (*naim*)
 
 | yamul | English |
 |---|---|
@@ -99,7 +91,7 @@ device they showcase. Words used here are drawn from
 
 ---
 
-## 7. Purpose (proposed *hil* as subordinator)
+## 7. Purpose (*hil* as subordinator)
 
 | yamul | English |
 |---|---|
@@ -111,7 +103,7 @@ device they showcase. Words used here are drawn from
 
 ---
 
-## 8. Temporal (proposed clause-initial *pu* / *cu* / *man* / *cur*)
+## 8. Temporal (clause-initial *pu* / *cu* / *man* / *cur*)
 
 | yamul | English |
 |---|---|
