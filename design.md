@@ -3,10 +3,13 @@
 A constructed natural language built around a phonosemantic palette
 ("iconemes") and designed for international learnability.
 
-The name **yamul** parses as *yam* + *ul* = THINK + JOIN = "thoughts
-joined." Read literally, it describes what language *is* — the act of
-joining minds through shared cognitive content. The name is both the
-language's proper name and its common noun for "language."
+The name **yamul** has two readings. In English it's a backronym for
+**y**et **a**nother **m**ade-**u**p **l**anguage — yamul is part of
+the long tradition of conlangs that don't really need to exist. In
+yamul itself it parses as *yam* + *ul* = THINK + JOIN = "thoughts
+joined," which describes what language *is*: the act of joining minds
+through shared cognitive content. The name is both the language's
+proper name and its common noun for "language."
 
 This document covers the *design rationale*: why yamul is shaped the
 way it is, the iconeme system that underlies its vocabulary, the
