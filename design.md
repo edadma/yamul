@@ -32,9 +32,14 @@ to be resolved. For *how to read, write, and compose yamul*, see
   associations rather than determining its meaning. Multiple iconeme
   combinations can converge on the same concept, with subtle differences
   in feel that usage will eventually distinguish.
-- **Easy to learn.** No gender, no inflection, no agreement, no obligatory
+- **Easy to learn.** No *grammatical* gender (no agreement, no gendered
+  articles, no noun-class inflection), no other inflection, no obligatory
   tense or plural, no irregular forms. One letter per phoneme. No
   capitalization. Strict word order so no case marking is needed.
+  Referential gender — talking about a sister vs. a brother — is fully
+  expressible via the MALE / FEMALE iconemes (*tan* / *dan*) as
+  head-first modifiers; the unmodified term is gender-neutral by
+  default, so non-gendered usage stays short.
 - **Head-initial throughout.** Verbs precede objects, nouns precede
   modifiers, heads precede dependents in every construction.
 - **Isolating–agglutinative hybrid.** Content words are agglutinative
@@ -170,10 +175,11 @@ word formation in practice, sentence grammar, sample sentences.
    compound back to its iconemes); the natural next step is a
    sentence-level tool that segments a yamul string, looks up
    compounds in lexicon.md, and renders an interlinear gloss.
-3. **Extend the lexicon.** A starter dictionary of ~90 compounds lives
-   in lexicon.md, all tokenizer-verified. Gaps to fill: numerals
-   beyond ONE/MANY, kinship terms, weather verbs, common foods,
-   anything else needed by item 4 below.
+3. **Extend the lexicon.** A starter dictionary lives in lexicon.md,
+   all tokenizer-verified, including kinship terms built on the
+   PERSON + relation + (MALE/FEMALE) pattern. Gaps to fill: numerals
+   beyond ONE/MANY, weather verbs, common foods, anything else needed
+   by item 4 below.
 4. **Write extended text** — a paragraph, a story, a poem — to stress
    the design in connected discourse and surface weaknesses that
    sentence-level examples won't show.

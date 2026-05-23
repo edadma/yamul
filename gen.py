@@ -193,6 +193,8 @@ ALL_CONCEPTS = [
     "HEAD", "HAND", "EYE", "MOUTH", "HEART", "FOOT",
     # 17. Generic categories
     "PERSON", "PLACE", "TIME", "WAY",
+    # 18. Gender
+    "MALE", "FEMALE",
 ]
 
 
@@ -250,6 +252,8 @@ TIER_2_CONCEPTS = [
     "TOWARD", "AWAY", "UP", "DOWN", "INSIDE", "OUTSIDE",
     # Common temporal
     "BEGIN", "END", "CHANGE", "AGAIN",
+    # Gender
+    "MALE", "FEMALE",
 ]
 
 # Everything else falls into Tier 3 by default (full pool available).
@@ -348,6 +352,9 @@ MANUAL_PINS = {
     "HEART": "haor", "FOOT": "xil",
     # 17. Generic categories
     "PERSON": "sem", "PLACE": "an", "TIME": "cur", "WAY": "lin",
+    # 18. Gender — neutral-class CVN minimal pair, deliberately balanced
+    # in sharpness so neither encodes a stereotype.
+    "MALE": "tan", "FEMALE": "dan",
 }
 
 # Forms that must NOT be assigned to any concept. Currently empty — *yam*

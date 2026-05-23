@@ -7,11 +7,11 @@ All assignments below are pinned in `gen.py`. Edit `MANUAL_PINS` and re-run `pyt
 **Sound-symbolic class** (selects iconemes with appropriate sharpness):
 - 14 SHARP concepts (sharpness ≥ +2)
 - 15 SOFT concepts (sharpness ≤ -2)
-- 88 NEUTRAL concepts (sharpness in [-1, +1])
+- 90 NEUTRAL concepts (sharpness in [-1, +1])
 
 **Frequency tier** (restricts iconeme shapes to keep common words short):
 - Tier 1 (28 concepts): CV/VN/VL only — 2 phonemes, no vowel pair
-- Tier 2 (37 concepts): adds CVN/CVL — 2-3 phonemes, no vowel pair
+- Tier 2 (39 concepts): adds CVN/CVL — 2-3 phonemes, no vowel pair
 - Tier 3 (52 concepts): full pool, including CVV/CVVC
 
 ## Assignments
@@ -135,3 +135,5 @@ All assignments below are pinned in `gen.py`. Edit `MANUAL_PINS` and re-run `pyt
 | PLACE | **an** | 2 | NEUTRAL | -1 |
 | TIME | **cur** | 2 | NEUTRAL | +0 |
 | WAY | **lin** | 2 | NEUTRAL | -1 |
+| MALE | **tan** | 2 | NEUTRAL | +1 |
+| FEMALE | **dan** | 2 | NEUTRAL | -1 |

@@ -71,6 +71,33 @@ Note the head-first ordering on *fonsim* vs *simfon*: WATER + LIVE is
 | *semha* | PERSON + OTHER | stranger |
 | *semyar* | PERSON + INSIDE | guest |
 
+## Gender and kinship
+
+yamul has no grammatical gender, but it can refer to gendered concepts
+via the MALE / FEMALE iconemes (*tan* / *dan*) used as head-first
+modifiers. The unmodified term is gender-neutral and is the default
+form — gender marking is only added when context calls for it.
+
+| Word | Composition | Meaning |
+|---|---|---|
+| *semtan* | PERSON + MALE | man |
+| *semdan* | PERSON + FEMALE | woman |
+| *semkertan* | PERSON + SMALL + MALE | boy |
+| *semkerdan* | PERSON + SMALL + FEMALE | girl |
+| *sempu* | PERSON + BEFORE | parent |
+| *semputan* | PERSON + BEFORE + MALE | father |
+| *sempudan* | PERSON + BEFORE + FEMALE | mother |
+| *semcu* | PERSON + AFTER | offspring |
+| *semcutan* | PERSON + AFTER + MALE | son |
+| *semcudan* | PERSON + AFTER + FEMALE | daughter |
+| *semme* | PERSON + SAME | sibling |
+| *semmetan* | PERSON + SAME + MALE | brother |
+| *semmedan* | PERSON + SAME + FEMALE | sister |
+
+The same MALE/FEMALE modifier composes onto any noun where gender
+matters — for example *simfer tan* "male animal," *simfer dan* "female
+animal" — but those needn't be lexicalized.
+
 ## Body
 
 | Word | Composition | Meaning |

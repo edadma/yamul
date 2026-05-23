@@ -211,8 +211,10 @@ Three base pronouns, pluralized with MANY:
 | 2nd | YOU | YOU MANY (you all) |
 | 3rd | THEY | THEY MANY (they) |
 
-No gender. No formality distinction. No subject/object case (position
-determines role).
+Pronouns are gender-neutral — there's no he/she split. When the gender
+of the referent matters, use a noun phrase instead: *semtan* "man,"
+*semdan* "woman," or a kinship term from lexicon.md. No formality
+distinction. No subject/object case (position determines role).
 
 ### Plural marking
 Optional particle MANY after the noun, only when number isn't clear from
@@ -296,7 +298,10 @@ iconemes may shift if the seed changes.
   items
 - **Pronouns:** *xu* (I), *ku* (you), *su* (they); + *he* (MANY) for
   plural
-- **No:** capitalization, gender, articles, agreement, inflection,
-  obligatory tense, obligatory plural, irregular forms
+- **No:** capitalization, grammatical gender, articles, agreement,
+  inflection, obligatory tense, obligatory plural, irregular forms
+- **Referential gender:** the MALE / FEMALE iconemes (*tan* / *dan*)
+  combine head-first with any noun where gender matters; unmodified is
+  the gender-neutral default
 - **Yes:** optional TAM particles, optional plural marker,
   postpositional linkers, mandatory pronouns
