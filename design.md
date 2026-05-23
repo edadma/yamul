@@ -108,7 +108,61 @@ This guarantees the most-spoken words are the shortest.
 
 ---
 
-## 3. Blocked forms
+## 3. Writing systems
+
+yamul has two scripts, intended to coexist as duals.
+
+- **Latin script** — sound-faithful, keyboard-native. One letter per
+  phoneme; the default for typing and computer text. Documented in
+  [grammar.md §1–§2](grammar.md).
+- **Pictographic script** — meaning-faithful, hand-writable. One
+  glyph per iconeme; compound words appear as their component glyphs
+  in head-first order inside a single word-block, so the morphology
+  of every written word is visible at a glance. Live preview:
+  [glyphs.html](glyphs.html).
+
+The Latin script makes the *sound* of a word the written surface;
+the pictographic script makes its *meaning* the written surface.
+Both are first-class.
+
+### Pictographic design rules
+
+1. **One glyph per iconeme.** Compounds are not their own glyphs;
+   they are sequences of iconeme glyphs in head-first order, matching
+   the spoken and Latin-transcription order.
+
+2. **Hand-writable stroke discipline.** Each glyph decomposes into a
+   small inventory of brush-style strokes — straight lines, single-
+   motion arcs, closed loops, and single ink dots. No filled regions
+   except small ink dots used as marks. Glyphs run 2–6 strokes each;
+   the most common iconemes (pronouns, particles, conjunctions) get
+   the lowest stroke counts. The intent is that any learner can
+   reproduce every glyph by hand, the way Chinese characters
+   decompose into a fixed inventory of strokes.
+
+3. **Sound-symbolic class is carried by stroke shape.** SHARP
+   iconemes use straight strokes and angular intersections; SOFT
+   iconemes use arcs and rounded shapes; NEUTRAL sits between. The
+   cross-modal coherence the phonology gives the spoken language
+   carries over to the written form — a sharp-sounding iconeme also
+   *looks* sharp.
+
+4. **Word boundary by block, not space.** A multi-iconeme word is a
+   single visual block; its constituent glyphs sit side-by-side at
+   fixed size. Word boundaries are signaled by inter-block spacing
+   (and, in v1, by a faint underline grouping each block's glyphs).
+   The Latin script's required-space rule has no analogue here — in
+   the pictographic script, the block *is* the word.
+
+5. **Reading order matches the spoken/Latin order.** Left-to-right
+   within a word block; left-to-right across blocks on a line;
+   top-to-bottom across lines. No bidirectional or stacked variants
+   in v1.
+
+
+---
+
+## 4. Blocked forms
 
 Forms can be deliberately reserved as unassignable to protect compound
 words from parser ambiguity under longest-match. None are currently
@@ -121,7 +175,7 @@ when new coinings turn out to need it.
 
 ---
 
-## 4. Pinned vocabulary
+## 5. Pinned vocabulary
 
 The following iconemes are fixed by manual pin (not randomized):
 
@@ -141,7 +195,7 @@ rest of the vocabulary.
 
 ---
 
-## 5. Tooling
+## 6. Tooling
 
 **gen.py** — generates the iconeme pool, applies sound-symbolic and
 tier constraints, and emits an assignment file. The current lexicon is
@@ -165,7 +219,7 @@ word formation in practice, sentence grammar, sample sentences.
 
 ---
 
-## 6. Open issues / next steps
+## 7. Open issues / next steps
 
 1. **Override accidental cognates.** Some seed runs produce assignments
    that collide with English/Spanish/etc. words. Add them to

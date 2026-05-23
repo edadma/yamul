@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>yamul — pictographic glyph sketches v5</title>
+<style>
+  :root {
+    --bg: #f6f2e7;
+    --ink: #1a1a1a;
+    --muted: #6b6258;
+    --rule: #d8cfb8;
+    --word-rule: #b8a878;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: 'Iowan Old Style', 'Palatino', Georgia, serif;
+    background: var(--bg);
+    color: var(--ink);
+    margin: 0;
+    padding: 3.5rem 2rem 6rem;
+    line-height: 1.55;
+  }
+  .container { max-width: 1080px; margin: 0 auto; }
+  h1 {
+    font-weight: 400;
+    font-size: 2rem;
+    letter-spacing: -0.01em;
+    margin: 0 0 0.4rem;
+  }
+  h1 .sub {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+    margin-top: 0.4rem;
+    font-style: italic;
+  }
+  .intro {
+    max-width: 62ch;
+    color: #2a2a2a;
+    margin: 1.5rem 0 3rem;
+  }
+  .intro p { margin: 0.6rem 0; }
+  .section { margin-top: 3.5rem; }
+  .section-label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--muted);
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 0.6rem;
+    margin-bottom: 2rem;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 2.2rem 1.2rem;
+  }
+  .glyph { text-align: center; }
+  .glyph svg {
+    width: 72px;
+    height: 72px;
+    display: block;
+    margin: 0 auto 0.75rem;
+  }
+  .latin {
+    font-family: 'IBM Plex Mono', ui-monospace, monospace;
+    font-size: 0.95rem;
+    font-weight: 500;
+  }
+  .iconeme {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--muted);
+    margin-top: 0.15rem;
+  }
+  .strokes {
+    font-size: 0.65rem;
+    color: var(--muted);
+    margin-top: 0.05rem;
+    font-family: 'IBM Plex Mono', monospace;
+  }
+
+  /* Word-glyphs */
+  .word-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 2.5rem 1.2rem;
+  }
+  .word { text-align: center; }
+  .word .block {
+    display: inline-block;
+    padding: 0 0.4rem 0.4rem;
+    border-bottom: 1.5px solid var(--word-rule);
+    margin-bottom: 0.75rem;
+  }
+  .word svg.glyph-block {
+    height: 72px;
+    display: block;
+    margin: 0 auto;
+  }
+  .word .gloss {
+    font-size: 0.78rem;
+    color: #555;
+    margin-top: 0.1rem;
+    font-style: italic;
+  }
+  .word .breakdown {
+    font-size: 0.7rem;
+    color: var(--muted);
+    margin-top: 0.3rem;
+    font-family: 'IBM Plex Mono', monospace;
+  }
+
+  /* Sentence */
+  .sentence { margin: 1.5rem 0 0; text-align: center; }
+  .sentence .line {
+    margin: 1rem 0 1.75rem;
+    line-height: 1;
+  }
+  .sentence svg.word-block {
+    height: 52px;
+    display: inline-block;
+    vertical-align: middle;
+    padding: 0 4px 5px;
+    border-bottom: 1.5px solid var(--word-rule);
+    margin: 0 5px;
+  }
+  .sentence .punct {
+    font-family: 'Iowan Old Style', Georgia, serif;
+    font-size: 1.5rem;
+    vertical-align: middle;
+    margin: 0 0 0 -4px;
+  }
+  .sentence .latin-line {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.95rem;
+    margin: 0.4rem 0 0.25rem;
+  }
+  .sentence .english-line {
+    font-style: italic;
+    color: var(--muted);
+    font-size: 0.9rem;
+  }
+
+  /* SVG ink defaults */
+  .g {
+    fill: none;
+    stroke: var(--ink);
+    stroke-width: 3;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    vector-effect: non-scaling-stroke;
+  }
+  .g-sharp { stroke-linecap: butt; stroke-linejoin: miter; }
+  .ink { fill: var(--ink); stroke: none; }
+</style>
+</head>
+<body>
+
+<!-- ICONEME SYMBOL LIBRARY (hidden) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+
+    <!-- elements -->
+    <symbol id="i-fon" viewBox="0 0 60 60">
+      <path class="g" d="M8 18 Q 19 12, 30 18 T 52 18"/>
+      <path class="g" d="M8 30 Q 19 24, 30 30 T 52 30"/>
+      <path class="g" d="M8 42 Q 19 36, 30 42 T 52 42"/>
+    </symbol>
+    <symbol id="i-xin" viewBox="0 0 60 60">
+      <line class="g g-sharp" x1="30" y1="10" x2="18" y2="48"/>
+      <line class="g g-sharp" x1="30" y1="10" x2="42" y2="48"/>
+      <line class="g g-sharp" x1="22" y1="30" x2="30" y2="40"/>
+      <line class="g g-sharp" x1="38" y1="30" x2="30" y2="40"/>
+    </symbol>
+    <symbol id="i-bum" viewBox="0 0 60 60">
+      <path class="g" d="M8 38 Q 30 18, 52 38"/>
+      <line class="g" x1="6" y1="48" x2="54" y2="48"/>
+    </symbol>
+    <symbol id="i-xim" viewBox="0 0 60 60">
+      <line class="g" x1="14" y1="22" x2="34" y2="18"/>
+      <line class="g" x1="20" y1="32" x2="42" y2="30"/>
+      <line class="g" x1="14" y1="44" x2="36" y2="46"/>
+    </symbol>
+    <symbol id="i-kae" viewBox="0 0 60 60">
+      <line class="g g-sharp" x1="30" y1="10" x2="30" y2="50"/>
+      <line class="g g-sharp" x1="10" y1="30" x2="50" y2="30"/>
+      <line class="g g-sharp" x1="16" y1="16" x2="44" y2="44"/>
+      <line class="g g-sharp" x1="44" y1="16" x2="16" y2="44"/>
+      <circle class="ink" cx="30" cy="30" r="4"/>
+    </symbol>
+    <symbol id="i-miul" viewBox="0 0 60 60">
+      <path class="g" d="M10 30 Q 30 14, 50 30"/>
+      <path class="g" d="M10 30 Q 30 46, 50 30"/>
+      <line class="g" x1="20" y1="30" x2="40" y2="30"/>
+    </symbol>
+
+    <!-- body and being -->
+    <symbol id="i-taor" viewBox="0 0 60 60">
+      <path class="g" d="M10 30 Q 30 14, 50 30"/>
+      <path class="g" d="M10 30 Q 30 46, 50 30"/>
+      <circle class="ink" cx="30" cy="30" r="4"/>
+    </symbol>
+    <symbol id="i-xuim" viewBox="0 0 60 60">
+      <line class="g" x1="22" y1="18" x2="38" y2="18"/>
+      <path class="g" d="M14 26 Q 30 44, 46 26"/>
+    </symbol>
+    <symbol id="i-sem" viewBox="0 0 60 60">
+      <circle class="ink" cx="30" cy="14" r="4"/>
+      <line class="g" x1="30" y1="22" x2="18" y2="50"/>
+      <line class="g" x1="30" y1="22" x2="42" y2="50"/>
+    </symbol>
+    <symbol id="i-cur" viewBox="0 0 60 60">
+      <circle class="g" cx="30" cy="30" r="16"/>
+      <line class="g" x1="30" y1="30" x2="30" y2="18"/>
+      <line class="g" x1="30" y1="30" x2="40" y2="34"/>
+    </symbol>
+
+    <!-- spatial and abstract -->
+    <symbol id="i-rar" viewBox="0 0 60 60">
+      <line class="g" x1="30" y1="50" x2="30" y2="12"/>
+      <line class="g" x1="30" y1="12" x2="22" y2="22"/>
+      <line class="g" x1="30" y1="12" x2="38" y2="22"/>
+    </symbol>
+    <symbol id="i-yim" viewBox="0 0 60 60">
+      <line class="g" x1="30" y1="10" x2="30" y2="48"/>
+      <line class="g" x1="30" y1="48" x2="22" y2="38"/>
+      <line class="g" x1="30" y1="48" x2="38" y2="38"/>
+    </symbol>
+    <symbol id="i-yar" viewBox="0 0 60 60">
+      <line class="g" x1="12" y1="12" x2="48" y2="12"/>
+      <line class="g" x1="48" y1="12" x2="48" y2="48"/>
+      <line class="g" x1="48" y1="48" x2="12" y2="48"/>
+      <line class="g" x1="12" y1="48" x2="12" y2="12"/>
+      <circle class="ink" cx="30" cy="30" r="4"/>
+    </symbol>
+    <symbol id="i-keu" viewBox="0 0 60 60">
+      <path class="g" d="M8 26 Q 30 18, 52 26"/>
+      <path class="g" d="M8 38 Q 30 46, 52 38"/>
+    </symbol>
+    <symbol id="i-xu" viewBox="0 0 60 60">
+      <path class="g" d="M20 14 Q 12 30, 20 46"/>
+      <path class="g" d="M40 14 Q 48 30, 40 46"/>
+      <circle class="ink" cx="30" cy="30" r="4"/>
+    </symbol>
+    <symbol id="i-ku" viewBox="0 0 60 60">
+      <path class="g" d="M20 14 Q 28 30, 20 46"/>
+      <path class="g" d="M40 14 Q 32 30, 40 46"/>
+      <circle class="ink" cx="30" cy="30" r="4"/>
+    </symbol>
+    <symbol id="i-il" viewBox="0 0 60 60">
+      <circle class="g" cx="22" cy="30" r="10"/>
+      <circle class="g" cx="38" cy="30" r="10"/>
+    </symbol>
+    <symbol id="i-me" viewBox="0 0 60 60">
+      <line class="g" x1="12" y1="24" x2="48" y2="24"/>
+      <line class="g" x1="12" y1="36" x2="48" y2="36"/>
+    </symbol>
+
+    <!-- modifiers, modals, gender -->
+    <symbol id="i-li" viewBox="0 0 60 60">
+      <line class="g" x1="12" y1="30" x2="24" y2="42"/>
+      <line class="g" x1="24" y1="42" x2="48" y2="16"/>
+    </symbol>
+    <symbol id="i-coa" viewBox="0 0 60 60">
+      <circle class="g" cx="30" cy="16" r="7"/>
+      <circle class="g" cx="44" cy="30" r="7"/>
+      <circle class="g" cx="30" cy="44" r="7"/>
+      <circle class="g" cx="16" cy="30" r="7"/>
+      <circle class="ink" cx="30" cy="30" r="3"/>
+    </symbol>
+    <symbol id="i-ro" viewBox="0 0 60 60">
+      <line class="g" x1="10" y1="26" x2="50" y2="26"/>
+      <line class="g" x1="30" y1="26" x2="30" y2="48"/>
+    </symbol>
+    <symbol id="i-wa" viewBox="0 0 60 60">
+      <line class="g" x1="18" y1="14" x2="18" y2="46"/>
+      <line class="g" x1="42" y1="14" x2="42" y2="46"/>
+      <line class="g" x1="18" y1="30" x2="42" y2="30"/>
+    </symbol>
+    <symbol id="i-yo" viewBox="0 0 60 60">
+      <path class="g" d="M14 46 L 14 24 Q 30 10, 46 24 L 46 46"/>
+    </symbol>
+    <symbol id="i-pe" viewBox="0 0 60 60">
+      <line class="g g-sharp" x1="20" y1="14" x2="20" y2="46"/>
+      <line class="g g-sharp" x1="20" y1="14" x2="44" y2="30"/>
+      <line class="g g-sharp" x1="20" y1="46" x2="44" y2="30"/>
+    </symbol>
+    <symbol id="i-dan" viewBox="0 0 60 60">
+      <circle class="g" cx="30" cy="20" r="7"/>
+      <line class="g" x1="30" y1="27" x2="30" y2="46"/>
+      <line class="g" x1="22" y1="40" x2="38" y2="40"/>
+    </symbol>
+
+    <!-- radical forms — used when an iconeme appears as a component
+         inside a word-glyph. Same identity, fewer strokes, designed for
+         the smaller cell. The standalone full forms above are still
+         used in the inventory display and for one-iconeme words. -->
+    <symbol id="i-fon-r" viewBox="0 0 60 60">
+      <circle class="ink" cx="20" cy="14" r="5"/>
+      <circle class="ink" cx="32" cy="30" r="5"/>
+      <circle class="ink" cx="20" cy="46" r="5"/>
+    </symbol>
+    <symbol id="i-xin-r" viewBox="0 0 60 60">
+      <line class="g g-sharp" x1="30" y1="10" x2="14" y2="50"/>
+      <line class="g g-sharp" x1="30" y1="10" x2="46" y2="50"/>
+    </symbol>
+    <symbol id="i-kae-r" viewBox="0 0 60 60">
+      <line class="g g-sharp" x1="30" y1="10" x2="30" y2="50"/>
+      <line class="g g-sharp" x1="10" y1="30" x2="50" y2="30"/>
+      <circle class="ink" cx="30" cy="30" r="5"/>
+    </symbol>
+    <symbol id="i-cur-r" viewBox="0 0 60 60">
+      <circle class="g" cx="30" cy="30" r="18"/>
+    </symbol>
+
+  </defs>
+</svg>
+
+<div class="container">
+
+  <h1>yamul — pictographic glyph sketches
+    <span class="sub">v5 — single-glyph words</span>
+  </h1>
+
+  <div class="intro">
+    <p>Each word is now <em>one</em> glyph. The iconemes that compose the word appear as simplified-scale sub-elements arranged in a regular layout — the way Chinese characters combine radicals into a single square block. The morphology is visible at a glance, but every word reads as one unified mark, not a strip of separate signs.</p>
+    <p>Each iconeme still decomposes into 2–6 brush strokes; sound-symbolic class (SHARP / SOFT) carries through stroke shape. Layout: a 2-iconeme word fills two cells side-by-side (head left, modifier right); a 3-iconeme word fills three cells; a 4-iconeme word fills a 2×2 grid. Stroke weight stays consistent at any scale.</p>
+    <p>When an iconeme appears as a component inside a word-glyph, it often uses a simplified <em>radical form</em> — fewer strokes, designed for the smaller cell. Compare Chinese 水 → 氵 (water as a left radical loses 4 strokes for 3 dots). For yamul, the densest iconemes — <em>fon</em>, <em>kae</em>, <em>cur</em> — get radical forms; minimal ones reuse their standalone shape unchanged.</p>
+  </div>
+
+  <!-- ICONEME INVENTORY -->
+  <div class="section">
+    <div class="section-label">elements</div>
+    <div class="grid">
+      <div class="glyph"><svg viewBox="0 0 60 60"><use href="#i-fon"/></svg><div class="latin">fon</div><div class="iconeme">water · soft</div><div class="strokes">3 strokes</div></div>
+      <div class="glyph"><svg viewBox="0 0 60 60"><use href="#i-xin"/></svg><div class="latin">xin</div><div class="iconeme">fire · sharp</div><div class="strokes">4 strokes</div></div>
+      <div class="glyph"><svg viewBox="0 0 60 60"><use href="#i-bum"/></svg><div class="latin">bum</div><div class="iconeme">earth · soft</div><div class="strokes">2 strokes</div></div>
+      <div class="glyph"><svg viewBox="0 0 60 60"><use href="#i-xim"/></svg><div class="latin">xim</div><div class="iconeme">air · neutral</div><div class="strokes">3 strokes</div></div>
+      <div class="glyph"><svg viewBox="0 0 60 60"><use href="#i-kae"/></svg><div class="latin">kae</div><div class="iconeme">bright · sharp</div><div class="strokes">5 strokes</div></div>
+      <div class="glyph"><svg viewBox="0 0 60 60"><use href="#i-miul"/></svg><div class="latin">miul</div><div class="iconeme">dark · soft</div><div class="strokes">3 strokes</div></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">body and being</div>
+    <div class="grid">
+      <div class="glyph"><svg viewBox="0 0 60 60"><use href="#i-taor"/></svg><div class="latin">taor</div><div class="iconeme">eye · neutral</div><div class="strokes">3 strokes</div></div>
+      <div class="glyph"><svg viewBox="0 0 60 60"><use href="#i-xuim"/></svg><div class="latin">xuim</div><div class="iconeme">mouth · neutral</div><div class="strokes">2 strokes</div></div>
+      <div class="glyph"><svg viewBox="0 0 60 60"><use href="#i-sem"/></svg><div class="latin">sem</div><div class="iconeme">person · neutral</div><div class="strokes">3 strokes</div></div>
+      <div class="glyph"><svg viewBox="0 0 60 60"><use href="#i-cur"/></svg><div class="latin">cur</div><div class="iconeme">time · neutral</div><div class="strokes">3 strokes</div></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">spatial and abstract</div>
+    <div class="grid">
+      <div class="glyph"><svg viewBox="0 0 60 60"><use href="#i-rar"/></svg><div class="latin">rar</div><div class="iconeme">up · neutral</div><div class="strokes">3 strokes</div></div>
+      <div class="glyph"><svg viewBox="0 0 60 60"><use href="#i-yim"/></svg><div class="latin">yim</div><div class="iconeme">down · neutral</div><div class="strokes">3 strokes</div></div>
+      <div class="glyph"><svg viewBox="0 0 60 60"><use href="#i-yar"/></svg><div class="latin">yar</div><div class="iconeme">inside · neutral</div><div class="strokes">5 strokes</div></div>
+      <div class="glyph"><svg viewBox="0 0 60 60"><use href="#i-keu"/></svg><div class="latin">keu</div><div class="iconeme">path · neutral</div><div class="strokes">2 strokes</div></div>
+      <div class="glyph"><svg viewBox="0 0 60 60"><use href="#i-xu"/></svg><div class="latin">xu</div><div class="iconeme">self · neutral</div><div class="strokes">3 strokes</div></div>
+      <div class="glyph"><svg viewBox="0 0 60 60"><use href="#i-ku"/></svg><div class="latin">ku</div><div class="iconeme">you · neutral</div><div class="strokes">3 strokes</div></div>
+      <div class="glyph"><svg viewBox="0 0 60 60"><use href="#i-il"/></svg><div class="latin">il</div><div class="iconeme">belong · neutral</div><div class="strokes">2 strokes</div></div>
+      <div class="glyph"><svg viewBox="0 0 60 60"><use href="#i-me"/></svg><div class="latin">me</div><div class="iconeme">same · neutral</div><div class="strokes">2 strokes</div></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">modifiers, modals, gender</div>
+    <div class="grid">
+      <div class="glyph"><svg viewBox="0 0 60 60"><use href="#i-li"/></svg><div class="latin">li</div><div class="iconeme">good · neutral</div><div class="strokes">2 strokes</div></div>
+      <div class="glyph"><svg viewBox="0 0 60 60"><use href="#i-coa"/></svg><div class="latin">coa</div><div class="iconeme">beautiful · neutral</div><div class="strokes">5 strokes</div></div>
+      <div class="glyph"><svg viewBox="0 0 60 60"><use href="#i-ro"/></svg><div class="latin">ro</div><div class="iconeme">be · neutral</div><div class="strokes">2 strokes</div></div>
+      <div class="glyph"><svg viewBox="0 0 60 60"><use href="#i-wa"/></svg><div class="latin">wa</div><div class="iconeme">with · neutral</div><div class="strokes">3 strokes</div></div>
+      <div class="glyph"><svg viewBox="0 0 60 60"><use href="#i-yo"/></svg><div class="latin">yo</div><div class="iconeme">possible · neutral</div><div class="strokes">1 stroke</div></div>
+      <div class="glyph"><svg viewBox="0 0 60 60"><use href="#i-pe"/></svg><div class="latin">pe</div><div class="iconeme">begin · sharp</div><div class="strokes">3 strokes</div></div>
+      <div class="glyph"><svg viewBox="0 0 60 60"><use href="#i-dan"/></svg><div class="latin">dan</div><div class="iconeme">female · neutral</div><div class="strokes">3 strokes</div></div>
+    </div>
+  </div>
+
+  <!-- WORD-GLYPHS (compound words as single-glyph blocks) -->
+  <div class="section">
+    <div class="section-label">word-glyphs</div>
+    <p class="intro">Each compound word renders as one glyph. Iconemes occupy fixed cells inside the block; the head sits in the leftmost cell, modifiers follow in head-first order. A 2-iconeme word is two cells wide; a 3-iconeme word is three cells wide; a 4-iconeme word fills a 2×2 grid.</p>
+
+    <div class="word-grid">
+
+      <!-- fonyim — WATER + DOWN = rain -->
+      <div class="word">
+        <div class="block">
+          <svg class="glyph-block" viewBox="0 0 60 30">
+            <use href="#i-fon-r" x="0" y="0" width="30" height="30"/>
+            <use href="#i-yim" x="30" y="0" width="30" height="30"/>
+          </svg>
+        </div>
+        <div class="latin">fonyim</div>
+        <div class="gloss">rain</div>
+        <div class="breakdown">WATER + DOWN</div>
+      </div>
+
+      <!-- kaetaor — BRIGHT + EYE = sun -->
+      <div class="word">
+        <div class="block">
+          <svg class="glyph-block" viewBox="0 0 60 30">
+            <use href="#i-kae-r" x="0" y="0" width="30" height="30"/>
+            <use href="#i-taor" x="30" y="0" width="30" height="30"/>
+          </svg>
+        </div>
+        <div class="latin">kaetaor</div>
+        <div class="gloss">sun</div>
+        <div class="breakdown">BRIGHT + EYE</div>
+      </div>
+
+      <!-- kaecur — BRIGHT + TIME = day -->
+      <div class="word">
+        <div class="block">
+          <svg class="glyph-block" viewBox="0 0 60 30">
+            <use href="#i-kae-r" x="0" y="0" width="30" height="30"/>
+            <use href="#i-cur-r" x="30" y="0" width="30" height="30"/>
+          </svg>
+        </div>
+        <div class="latin">kaecur</div>
+        <div class="gloss">day</div>
+        <div class="breakdown">BRIGHT + TIME</div>
+      </div>
+
+      <!-- miulcur — DARK + TIME = night -->
+      <div class="word">
+        <div class="block">
+          <svg class="glyph-block" viewBox="0 0 60 30">
+            <use href="#i-miul" x="0" y="0" width="30" height="30"/>
+            <use href="#i-cur-r" x="30" y="0" width="30" height="30"/>
+          </svg>
+        </div>
+        <div class="latin">miulcur</div>
+        <div class="gloss">night</div>
+        <div class="breakdown">DARK + TIME</div>
+      </div>
+
+      <!-- semyar — PERSON + INSIDE = guest -->
+      <div class="word">
+        <div class="block">
+          <svg class="glyph-block" viewBox="0 0 60 30">
+            <use href="#i-sem" x="0" y="0" width="30" height="30"/>
+            <use href="#i-yar" x="30" y="0" width="30" height="30"/>
+          </svg>
+        </div>
+        <div class="latin">semyar</div>
+        <div class="gloss">guest</div>
+        <div class="breakdown">PERSON + INSIDE</div>
+      </div>
+
+      <!-- fonkeu — WATER + PATH = river -->
+      <div class="word">
+        <div class="block">
+          <svg class="glyph-block" viewBox="0 0 60 30">
+            <use href="#i-fon-r" x="0" y="0" width="30" height="30"/>
+            <use href="#i-keu" x="30" y="0" width="30" height="30"/>
+          </svg>
+        </div>
+        <div class="latin">fonkeu</div>
+        <div class="gloss">river</div>
+        <div class="breakdown">WATER + PATH</div>
+      </div>
+
+      <!-- semmedan — PERSON + SAME + FEMALE = sister -->
+      <div class="word">
+        <div class="block">
+          <svg class="glyph-block" viewBox="0 0 90 30">
+            <use href="#i-sem" x="0"  y="0" width="30" height="30"/>
+            <use href="#i-me"  x="30" y="0" width="30" height="30"/>
+            <use href="#i-dan" x="60" y="0" width="30" height="30"/>
+          </svg>
+        </div>
+        <div class="latin">semmedan</div>
+        <div class="gloss">sister</div>
+        <div class="breakdown">PERSON + SAME + FEMALE</div>
+      </div>
+
+      <!-- kaecurpe — BRIGHT + TIME + BEGIN = morning -->
+      <div class="word">
+        <div class="block">
+          <svg class="glyph-block" viewBox="0 0 90 30">
+            <use href="#i-kae-r" x="0"  y="0" width="30" height="30"/>
+            <use href="#i-cur-r" x="30" y="0" width="30" height="30"/>
+            <use href="#i-pe"  x="60" y="0" width="30" height="30"/>
+          </svg>
+        </div>
+        <div class="latin">kaecurpe</div>
+        <div class="gloss">morning</div>
+        <div class="breakdown">BRIGHT + TIME + BEGIN</div>
+      </div>
+
+      <!-- rowa — BE + WITH = have -->
+      <div class="word">
+        <div class="block">
+          <svg class="glyph-block" viewBox="0 0 60 30">
+            <use href="#i-ro" x="0"  y="0" width="30" height="30"/>
+            <use href="#i-wa" x="30" y="0" width="30" height="30"/>
+          </svg>
+        </div>
+        <div class="latin">rowa</div>
+        <div class="gloss">have</div>
+        <div class="breakdown">BE + WITH</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- EXAMPLE SENTENCE -->
+  <div class="section">
+    <div class="section-label">example sentence</div>
+    <p class="intro">A short greeting written in the pictographic script. Each word is a single block (amber underline); the block's width tells you how many iconemes it carries.</p>
+
+    <div class="sentence">
+      <div class="line">
+        <svg class="word-block" viewBox="0 0 90 30"><use href="#i-sem" x="0" y="0" width="30" height="30"/><use href="#i-me" x="30" y="0" width="30" height="30"/><use href="#i-dan" x="60" y="0" width="30" height="30"/></svg><span class="punct">,</span>
+        <svg class="word-block" viewBox="0 0 90 30"><use href="#i-kae-r" x="0" y="0" width="30" height="30"/><use href="#i-cur-r" x="30" y="0" width="30" height="30"/><use href="#i-pe" x="60" y="0" width="30" height="30"/></svg>
+        <svg class="word-block" viewBox="0 0 30 30"><use href="#i-li" x="0" y="0" width="30" height="30"/></svg><span class="punct">.</span>
+        <svg class="word-block" viewBox="0 0 30 30"><use href="#i-ku" x="0" y="0" width="30" height="30"/></svg>
+        <svg class="word-block" viewBox="0 0 30 30"><use href="#i-yo" x="0" y="0" width="30" height="30"/></svg>
+        <svg class="word-block" viewBox="0 0 60 30"><use href="#i-ro" x="0" y="0" width="30" height="30"/><use href="#i-wa" x="30" y="0" width="30" height="30"/></svg>
+        <svg class="word-block" viewBox="0 0 60 30"><use href="#i-kae-r" x="0" y="0" width="30" height="30"/><use href="#i-cur-r" x="30" y="0" width="30" height="30"/></svg>
+        <svg class="word-block" viewBox="0 0 30 30"><use href="#i-coa" x="0" y="0" width="30" height="30"/></svg><span class="punct">.</span>
+      </div>
+      <div class="latin-line">semmedan, kaecurpe li. ku yo rowa kaecur coa.</div>
+      <div class="english-line">&ldquo;Good morning, sister. May you have a wonderful day.&rdquo;</div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

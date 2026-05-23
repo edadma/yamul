@@ -1,0 +1,12 @@
+{
+  "name": "yamul-preview",
+  "private": true,
+  "version": "0.0.1",
+  "description": "Headless screenshotter for yamul/glyphs.html",
+  "scripts": {
+    "snap": "node snap.mjs"
+  },
+  "dependencies": {
+    "playwright": "^1.60.0"
+  }
+}
